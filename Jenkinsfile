@@ -22,6 +22,10 @@ pipeline {
       steps{
         sh 'npm run build'
       }
-    }    
+    }  
+    stage ("Build Dockerfile") {
+      steps{
+        sh 'docker build -t hossamvic/1junkins'
   }
 }
+  
