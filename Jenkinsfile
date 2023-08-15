@@ -8,8 +8,20 @@ pipeline {
     stage  ("Install dependeincies") {
       steps {
         sh 'pwd'
+        sh 'ls'
         sh 'npm install'
       }
     }
+    stage ("Test"){
+      steps{
+        sh 'npm test'
+      }
+    }
+
+    stage ("Build"){
+      steps{
+        sh 'npm build'
+      }
+    }    
   }
 }
