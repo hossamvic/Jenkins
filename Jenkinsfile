@@ -5,9 +5,10 @@ pipeline {
     }
   }
   stages {
-    stage  ("NodeVersion") {
+    stage  ("Install dependeincies") {
       steps {
-        sh 'node --version'
+        sh 'pwd'
+        sh 'npm install'
       }
     }
   }
