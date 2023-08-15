@@ -27,5 +27,8 @@ pipeline {
       steps{
         sh 'docker build -t hossamvic/1junkins'
   }
+
+    }
+  }
 }
   
