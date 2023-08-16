@@ -4,15 +4,15 @@ pipeline {
         // DEOCKERHUB_CREDENTIALS = credentials('DockerCre')
       KUBECONFIG = credentials('DockerCre')
     }
- // stages {
-   //     stage('Deploy') {
-     //       steps {
-       //         script {
-         //           sh 'kubectl apply -f deployment.yaml'
-           //         sh 'kubectl apply -f service.yaml'
-             //   }
-          //  }
-       // }
+  stages {
+       stage('Deploy') {
+           steps {
+               script {
+                   sh 'kubectl apply -f deployment.yaml'
+                    sh 'kubectl apply -f service.yaml'
+                }
+            }
+        }
    stage  ("Install dependeincies") {
       agent {
          docker {image 'node:lts-buster-slim'}
