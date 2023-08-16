@@ -43,7 +43,7 @@ pipeline {
     
      stage ("dockerBuild"){
      steps {
-       sh 'docker build -t nagyadel/eclipse:${BUILD_NUMBER} .'
+       sh 'docker build -t hossamvic/1junkins:latest .'
      }
    }
      stage ("LoginANDPushImage"){
@@ -51,7 +51,7 @@ pipeline {
      sh 'echo username = ${DEOCKERHUB_CREDENTIALS_USR}'
      sh 'echo passwrod = ${DEOCKERHUB_CREDENTIALS_PSW}'  
      sh 'docker login -u ${DEOCKERHUB_CREDENTIALS_USR} -p ${DEOCKERHUB_CREDENTIALS_PSW} '  
-     sh 'docker push nagyadel/eclipse:${BUILD_NUMBER}' 
+     sh 'docker push hossamvic/1junkins:latest' 
      }
    }
 
